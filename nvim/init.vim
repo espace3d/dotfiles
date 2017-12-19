@@ -1,0 +1,99 @@
+""interface
+set encoding=utf8
+set number
+set mouse=a
+set autoindent
+set clipboard=unnamedplus
+" recherche incrementielle
+set incsearch
+set cursorline
+" insensible à la casse dans les recherches
+set ignorecase
+" insensible à la casse dans les chemins
+set wildignorecase
+"" true color
+" relative number
+set relativenumber
+
+
+" COLORS
+set background=dark
+"colorscheme onedark
+set termguicolors
+
+" PERSONAL COMMAND
+" open snippets for phaser in a vertical split
+command Pref vsplit ~/.vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets
+
+" CUSTOM KEYBINDING
+"NORMAL MODE
+nnoremap <C-Up> VDkPk <CR>
+nnoremap <C-Down> VDjPj <CR>
+nnoremap <C-a> ggVG <CR>
+nnoremap <C-=> G=gg <CR>
+map <F2> :TernDoc<CR>
+
+"INSERT MODE
+inoremap <C-Space> <C-x><C-o>
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('$HOME/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" DECLARE THE LIST OF PLUGINS.
+Plug 'ternjs/tern_for_vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Raimondi/delimitMate'
+Plug 'rhysd/github-complete.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-syntastic/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/indenthtml.vim'
+Plug 'walm/jshint.vim'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+"Plug 'majutsushi/tagbar'
+
+" COLORS THEMES
+"Plug 'joshdick/onedark.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" SUPERTAB
+"scroll from top to bottom
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+let g:python_host_prog  = '/usr/bin/python2.7'
+let g:python3_host_prog  = '/usr/bin/python3.5'
+
+"peut etre à supprimer
+noautocmd
+"" start deoplete at startup
+let g:deoplete#enable_at_startup = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%*
+
+"COMMANDES POUR SYNTASTIC
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" COMMANDES UTILES
+" yi( copier à l'intérieur de la parenthèse
+" ya( copier à toute la parenthèse
+" ya( coper
+"

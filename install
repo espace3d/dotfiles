@@ -1,0 +1,23 @@
+#!/bin/bash
+#mise à jour
+sudo apt-get update && sudo apt-get upgrade -y
+#ppa
+sudo add-apt-install -y awesome awesome-extra
+sudo apt-get update
+#installation
+sudo apt-get install -y unrar git radiotray espeak moc zsh mplayer pdftk awesome nautilus-dropbox
+dropbox start
+sudo apt-get install -y gthumb ranger inkscape clipit neovim neovim-qt adb
+sudo apt-get install -y vlc autojump focuswriter imagemagick chromium-browser xterm xcompmgr  
+sudo apt-get install -y blender cifs-utils exuberant-ctags python3-neovim
+#clean
+sudo apt-get upgrade -y && sudo apt-get autoclean
+# zsh
+xterm -e chsh
+sudo chmod +x ~/Dropbox/dotfiles/install_neovim.sh
+cd ~/Dropbox/dotfiles && ./install_neovim.sh
+xterm -hold -e echo -e "installation terminée, il ne reste plus qu'a copier les dotfiles avec la commande dropboxtosyst"
+
+
+
+

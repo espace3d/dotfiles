@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cd
+sudo add-apt-repository ppa:klaus-vormweg/awesome
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update 
+sudo apt-get upgrade
+sudo apt-get install awesome sublime-text 
+git clone --recursive https://github.com/copycat-killer/awesome-copycats.git
+
+cp -R ~/Dropbox/awesomecopycat/awesome/* ~/.config/awesome/
+echo "succes"
+
+#sudo add-apt-repository --remove ppa::klaus-vormweg/awesome
+#sudo apt-get update 
+#sudo apt-get upgrade
+
+exit 0

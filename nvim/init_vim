@@ -1,0 +1,83 @@
+""interface
+" devicons
+set encoding=utf8
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set number
+set mouse=a
+set clipboard=unnamedplus
+" recherche incrementielle
+set incsearch
+set cursorline
+" insensible à la casse dans les recherches
+set ignorecase
+" insensible à la casse dans les chemins
+set wildignorecase
+"" true color
+set background=dark
+set autoindent
+"" colors
+colorscheme onedark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+"" key
+inoremap <Tab> <C-n>
+
+"
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" keybinding
+nnoremap <C-O> <S-v> y dd <S-p> j <CR>
+
+" Declare the list of plugins.
+"Plug 'scrooloose/nerdtree'
+"Plug 'morhetz/gruvbox'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Raimondi/delimitMate'
+"Plug 'rhysd/github-complete.vim'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'kien/ctrlp.vim'
+"Plug 'majutsushi/tagbar'
+"Plug 'pangloss/vim-javascript'
+"Plug 'vim-scripts/indenthtml.vim'
+"Plug 'walm/jshint.vim'
+Plug 'ternjs/tern_for_vim'
+"Plug 'heavenshell/vim-jsdoc'
+"Plug 'roxma/nvim-completion-manager'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+" colors themes
+Plug 'rakr/vim-one'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'joshdick/onedark.vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'yuttie/hydrangea-vim'
+Plug 'jordwalke/flatlandia'
+Plug 'nowk/genericdc'
+Plug 'raphamorim/lucario'
+Plug 'clinstid/eink.vim'
+Plug 'exitface/synthwave.vim'
+
+
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+"" start deoplete at startup
+let g:deoplete#enable_at_startup = 1
+nnoremap <C-Up> VDkPk <CR>
+nnoremap <C-Down> VDjPj <CR>
+nnoremap <C-a> ggVG <CR>
+nnoremap <C-=> G=gg <CR>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
