@@ -17,6 +17,10 @@ sudo npm install -g neovim
 
 cp ~/dotfiles/.tern-project ~/
 cp ~/dotfiles/nvim/init.vim ~/.config/nvim/
+mkdir ~/.config/nvim/colors
+cp ~/dotfiles/nvim/colors/onedark.vim ~/config/nvim/colors
+cp ~/dotfiles/nvim/init.vim ~/.config/nvim/
+
 nvim +PlugInstall  
 cd && cd ~/.vim/plugged/tern_for_vim/ && sudo npm install tern
 cd && cd ~/.vim/plugged/tern_for_vim/node_modules/tern/plugin && wget "http://redchilligame.com/tutorials/vim_phaser/js/phaser.js" 
