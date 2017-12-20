@@ -15,8 +15,8 @@ sudo -H pip3 install --upgrade neovim
 sudo -H pip2 install --upgrade neovim
 sudo npm install -g neovim
 
-cp ~/Dropbox/dotfiles/.tern-project ~/
-cp ~/Dropbox/dotfiles/init.vim ~/.config/nvim/
+cp ~/dotfiles/.tern-project ~/
+cp ~/dotfiles/nvim/init.vim ~/.config/nvim/
 nvim +PlugInstall  
 cd && cd ~/.vim/plugged/tern_for_vim/ && sudo npm install tern
 cd && cd ~/.vim/plugged/tern_for_vim/node_modules/tern/plugin && wget "http://redchilligame.com/tutorials/vim_phaser/js/phaser.js" 
