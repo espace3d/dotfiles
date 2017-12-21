@@ -9,8 +9,8 @@ cd
 mkdir ~/.config/nvim
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
-sudo add-apt-repository ppa:neovim-ppa/stable && sudo apt-get update && sudo apt-get install neovim 
-sudo apt-get install python-dev python-pip python3-dev python3-pip 
+sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo apt-get update && sudo apt-get install neovim 
+sudo apt-get install -y python-dev python-pip python3-dev python3-pip 
 sudo -H pip3 install --upgrade neovim
 sudo -H pip2 install --upgrade neovim
 sudo npm install -g neovim
