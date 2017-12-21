@@ -14,7 +14,8 @@ set wildignorecase
 "" true color
 " relative number
 set relativenumber
-
+" vertical line to show position
+set cursorcolumn
 
 " COLORS
 set background=dark

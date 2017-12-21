@@ -1,0 +1,293 @@
+
+# var declaration
+snippet va => var name;
+	var ${1:name};
+
+snippet var => var name;
+	var ${1:name}=${2:value};
+
+# Function
+snippet fu => var name_function=function(arg){};
+	var ${1:function_name}=function (${2}) {
+		${0:${VISUAL}}
+	};
+
+# play function
+snippet pfu
+	${1:function_name}(${2:argument});
+
+# dot function 
+snippet dfu
+	${1:function_name}: function(${2:argument}) {
+		${0:${VISUAL}}
+	}
+
+# object
+snippet ob
+	var ${1:tableau}={${0:elements}};
+
+# object for tableau
+snippet obf
+	${1:obj}[${0:number}];
+
+# array
+snippet ar
+	var ${1:array}=[${0:elements}];
+
+# flag
+snippet fl
+	${1:var }${2:flag}=true;
+
+# this
+snippet th
+	this.${1:name}=${0:something};
+
+# sprite.param
+snippet param
+	${1:this.}${2:sprite}.${3:param}=${0:value};
+
+# if condition
+snippet if
+	if (${1:condition} {
+		${0:${VISUAL}}
+	};
+
+# if condition simple
+snippet ifs
+	${1:condition} && ${0:action};
+
+# ternary condition
+snippet cond			
+	${1:condition} ? ${2:action1} : ${3:action2};
+
+# if else
+snippet ife
+	if (${1:condition} {
+		${0:${VISUAL}}
+	}else{
+	
+	};
+
+# for
+snippet fo
+	for (var i = 0; i < ${1:3}; i++){
+		${2:sprite}[i]=${0:${VISUAL}};
+	}
+
+# sprite
+snippet sp
+	${1:var }${2:sprite}=game.add.sprite(${3:100},${4:100},'${5:image}');
+	$1$2.anchor.setTo(0.5,0.5);
+	$1$2.alpha=1;
+	$1$2.visible=true;
+
+# comment
+snippet co
+	// ${0:${VISUAL}}
+
+# ligne comment
+snippet li
+	// -------------------------------------
+	// ${0:${VISUAL}}
+	// -------------------------------------
+
+# Todo
+snippet to
+	//TODO : ${0:${VISUAL}}
+
+# case
+snippet ca
+	switch(${1:condition}){
+		case 0:
+			${2:action};
+			break;
+		default:
+			${0:action_default};
+			break;
+	}
+
+
+# delay
+snippet de
+	game.time.events.add( ${1:time},this.${0:function},this );
+
+# loop
+snippet lo
+	game.time.events.loop( ${1:time},this.${0:function},this );
+
+# method_prototype
+snippet me
+	${1:class_name}.prototype.${2:method_name} = function(${3}) {
+		${0:${VISUAL}}
+	};
+# prototype
+snippet pr
+	${1:_sprite} = function(game,posx,posy,${2:picture}){
+		this.$2='$2',
+		this.posx=posx;
+		this.posy=posy;
+		//call the class sprite from Phaser
+		Phaser.Sprite.call(this,game,this.posx,this.posy,this.picture);
+		this.anchor.setTo(0.5,0.5);
+		this.scale.setTo(1,1);
+		game.add.existing(this);
+	};
+
+	$1.prototype=Object.create(Phaser.Sprite.prototype);
+	
+	$1.prototype.${2:method_name}=function(){
+		${0:${VISUAL}}
+	};
+# prototype evolved
+snippet pre
+	//example of prototype => a simple sprite
+	${1:_sprite} = function(game,posx,posy,${2:picture}){
+		this.$2='$2',
+		this.posx=posx;
+		this.posy=posy;
+		//call the class sprite from Phaser
+		Phaser.Sprite.call(this,game,this.posx,this.posy,this.picture);
+		this.anchor.setTo(0.5,0.5);
+		this.scale.setTo(1,1);
+		game.add.existing(this);
+	};
+
+	$1.prototype=Object.create(Phaser.Sprite.prototype);
+	
+	$1.prototype.${3:method_name}=function(){
+		${0:${VISUAL}}
+	};
+
+	//use another prototype but with the previous parameter from _sprite:inheritance
+	${4:_extend_sprite}=function(game,posx,posy,picture,${5:another_feature}){
+	//call the first prototype
+	$1.call(this,game,posx,posy,picture);
+		this.$5=$5;
+	};
+	$4.prototype=Object.create($1.prototype);
+	// add a new characteritic to this prototype
+	$4.prototype.show_super_power=function(){
+		alert(this.$5);
+	};
+
+# state
+snippet st
+	var ${1:name_state}={
+		preload: function() {
+			${2:${VISUAL}}
+		},
+
+		create: function() {
+			${3:${VISUAL}}
+		},
+
+		update: function() {
+			${0:${VISUAL}}
+		},
+	}
+
+
+# phaser template
+snippet ph
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+	function preload() {
+		game.load.image('${1:image_name}', 'assets/sprites/$1.png');
+	}
+
+	var ${2:sprite};
+	var ${3:another_sprite};
+
+	function create() {
+		//start physics system here
+		${0:${VISUAL}}
+
+		$2 = game.add.sprite(200, 300, '$1', 2);
+		$2.anchor.set(0.5);
+
+		game.physics.enable($2, Phaser.Physics.ARCADE);
+		$2.body.immovable = true;
+
+		$3 = game.add.sprite(600, 270, '$1');
+		game.physics.enable($3, Phaser.Physics.ARCADE);
+
+		game.add.tween($2.scale).to( { x: 3, y: 3 }, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+	}
+
+	function update() {
+		$3.body.velocity.x = -200;
+		game.physics.arcade.collide($2, $3);
+	}
+
+	function render() {
+	}
+
+# random
+snippet ra
+	game.rnd.integerInRange(0,${0:value});
+
+# audio
+snippet au
+	var ${1:music}=game.add.audio('${2:sound}');
+	$1.volume=${0:1};
+	$1.play();
+
+# button
+snippet bu
+	this.${1:button}=game.add.button(this.${2:posx},this.${3:posy},this.${4:image},this.${5:anim_on_click},this,0,1,2);
+	this.$1.visible=${6:false};
+	this.$1.anchor.setTo(0.5,0.5);
+	this.$1.scale.setTo(0,0);
+	this.${0:flag}=true;
+
+# particles
+snippet pa
+		this.${1:name_particle} = game.add.emitter(${2:100},${3:200});
+		this.$1.makeParticles("${4:image_particle}");
+		this.$1.minParticleSpeed.setTo(-900,900);
+		this.$1.maxParticleSpeed.setTo(900,-900);
+		this.$1.setAlpha(0.5,0.1);
+		this.$1.minParticleScale = 0.1;
+		this.$1.maxParticleScale = 0.4;
+		this.$1.minRotation = 0;
+		this.$1.maxRotation = 0;
+		this.$1.on=false;
+		//game.time.events.add(600,function(){this.$1.start(true,2950,null,5);},this);
+
+# text
+snippet te
+	this.${1:text}=game.add.bitmapText(${2:posx},${3:posy},'${4:font}',${5:message},${6:size});
+	this.$1.anchor.setTo(0.5,0.5);
+	game.add.existing(this.$1);
+
+
+#tween	
+snippet tw
+	this.tween_position_${1:identifier} = game.add.tween(${2:obj}).to({x:${3:100},y:${4:400}},${5:1100},Phaser.Easing.${6:Linear.none},true,${7:900});
+	this.tween_scale_$1 = game.add.tween($2.scale).to({x:${8:1.5},y:${9:1.5}},$5,Phaser.Easing.$6,true,$7);
+	this.tween_alpha_$1 = game.add.tween($2).to({alpha:${10:1}},$5,Phaser.Easing.Linear.$6,true,$7);
+	this.tween_rotate_$1 = game.add.tween($2).to({angle:${11:45}},$5,Phaser.Easing.$6},true,$7});
+
+# copyright
+snippet copyright
+	/* jshint expr: true */
+	/* jshint esnext: true */
+	/* *************************************************************************
+	 * ${1:application_name}
+	 * __________________
+	 * 
+	 *  [${2:begin_year}] - [${3:now year}] ${4:name company}  
+	 *  All Rights Reserved.
+	 * 
+	 * NOTICE:  All information contained herein is, and remains
+	 * the property of $4 and its suppliers,
+	 * if any.  The intellectual and technical concepts contained
+	 * herein are proprietary to $4
+	 * and its suppliers and may be covered by Europe law and Foreign Patents,
+	 * patents in process, and are protected by trade secret or copyright law.
+	 * Dissemination of this information or reproduction of this material
+	 * is strictly forbidden unless prior written permission is obtained
+	 * from $4 - ${5:mail} - ${6:tel} 
+	 * ${7:adress}
+	 */
+	
