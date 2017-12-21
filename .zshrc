@@ -11,13 +11,12 @@
 
 #CHARGEMENT DE AUTOJUMP
 . /usr/share/autojump/autojump.sh
-export BASH_IT_THEME='bobby'
+
 #COMPLETION
 autoload -U bashcompinit
 bashcompinit
 autoload -U compinit
 compinit
-curl -H "Accept-Language:fr" wttr.in/gesves
 
 #AMELIORATION COMPLETION
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -93,10 +92,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #EXPORT ZSHRC >
 alias zshdropbox='cp $HOME/.zshrc $HOME/Dropbox/dotfiles/'
 #IMPORT ZSHRC 
+
 alias dropboxzsh='cp $HOME/Dropbox/dotfiles/.zshrc $HOME/'
 #COPY TO DROPBOX
 alias copytodropbox='cp $HOME/.zshrc $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/nvim/ $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/awesome/ $HOME/Dropbox/dotfiles/ && cp .vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets ~/Dropbox/dotfiles/vim-snippets/snippets/javascript/'
-alias dropboxtosyst='sudo cp -R $HOME/Dropbox/dotfiles/nvim $HOME/.config/ && cp -R $HOME/Dropbox/dotfiles/awesome $HOME/.config/ && cp ~/Dropbox/dotfiles/.zshrc $HOME/ && cp ~/Dropbox/dotfiles/vim-snippets/snippets/javascript/javascript-phaser.snippets ~/.vim/plugged/vim-snippets/snippets/javascript/'
+alias dropboxtosyst='sudo cp -R $HOME/Dropbox/dotfiles/nvim $HOME/.config/ && cp -R $HOME/Dropbox/dotfiles/awesome $HOME/.config/ && cp ~/Dropbox/dotfiles/.zshrc $HOME/ && cp ~/Dropbox/dotfiles/nvim/snippets/javascript-phaser.snippets ~/.vim/plugged/vim-snippets/snippets/javascript/'
 
 
 #CODAGE
@@ -106,6 +106,7 @@ alias origin='cd ~/Bureau/ && cp ~/Dropbox/index.html . && cp ~/Dropbox/index.js
 alias vic='nvim ~/.config/nvim/init.vim'
 
 #ALIAS MAISON ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+	alias sound='amixer -D pulse sset Master 5%+'
 alias dec='pkill awesome'
 alias fact='libreoffice $HOME/Dropbox/fact/FACTURIERBERTRAND.xls'
 alias k='killall'
@@ -130,7 +131,7 @@ alias fx='firefox &'
 #alias ht='cd ~/Dropbox/bubblexxx.github.io/ && browser-sync start --server --files "*.html, src/*.js, assets/*" & cd ~/Dropbox/bubblexxx.github.io/src/ && gvim main.js & firefox "www.youtube.com"'
 alias se='cd ~/Dropbox/bubblexxx.github.io/ && sudo python -m SimpleHTTPServer' 
 alias ht='cd ~/Dropbox/bubblexxx.github.io/ & chromium-browser "127.0.0.1:8000" & gvim ~/Dropbox/bubblexxx.github.io/src/main.js & firefox "www.youtube.com"'
-alias ga='cd ~/Dropbox/bubblexxx.github.io/ &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & gnome-terminal -x nvim ~/Dropbox/bubblexxx.github.io/src/main.js'
+alias ga='cd ~/Dropbox/bubblexxx.github.io/ &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & cd Dropbox/bubblexxx.github.io/src/ & gnome-terminal -x nvim ~/Dropbox/bubblexxx.github.io/src/main.js'
 #alias pi=' cd ~/Dropbox/js && gnome-terminal -x vim ~/Dropbox/js/main.js & cd ~/Dropbox/"js liens" && grep "^URL=" *.url | cut -d= -f2 | xargs firefox & cd ~/Dropbox/js && xterm -hold -e "cd ~/Dropbox/js && sudo python -m SimpleHTTPServer 80"'
 
 alias vip='vim -p *'
