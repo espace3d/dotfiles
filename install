@@ -14,8 +14,9 @@ sudo apt-get install -y blender cifs-utils exuberant-ctags python3-neovim
 sudo apt-get upgrade -y && sudo apt-get autoclean
 # zsh
 xterm -e chsh
-sudo chmod +x ~/Dropbox/dotfiles/install_neovim.sh
-cd ~/Dropbox/dotfiles && ./install_neovim.sh
+sudo chmod +x ~/dotfiles/install_neovim.sh
+cd ~/dotfiles && ./install_neovim.sh
+cp ~/dotfiles/.zshrc ~/
 xterm -hold -e echo -e "installation terminée, il ne reste plus qu'a copier les dotfiles avec la commande dropboxtosyst"
 
 

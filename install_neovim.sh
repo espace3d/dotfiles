@@ -15,7 +15,7 @@ sudo -H pip3 install --upgrade neovim
 sudo -H pip2 install --upgrade neovim
 sudo npm install -g neovim
 
-cp ~/dotfiles/.tern-project ~/
+cp ~/dotfiles/nvim/.tern-project ~/
 cp ~/dotfiles/nvim/init.vim ~/.config/nvim/
 mkdir ~/.config/nvim/colors
 cp ~/dotfiles/nvim/colors/onedark.vim ~/.config/nvim/colors

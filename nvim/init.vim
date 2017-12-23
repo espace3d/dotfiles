@@ -19,7 +19,7 @@ set cursorcolumn
 
 " COLORS
 set background=dark
-"colorscheme onedark
+colorscheme onedark
 set termguicolors
 
 " PERSONAL COMMAND
