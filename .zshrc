@@ -105,8 +105,22 @@ alias origin='cd ~/Bureau/ && cp ~/Dropbox/index.html . && cp ~/Dropbox/index.js
 #EDITER INIT.VIM - NVIM
 alias vic='nvim ~/.config/nvim/init.vim'
 
+
+#ALIAS GAMES ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+	alias delco='extract result.zip && rm result.zip && rm android-armv7-release-unsigned.apk android-x86-debug.apk android-x86-release-unsigned.apk'
+alias se='cd ~/Dropbox/bubblexxx.github.io/ && sudo python -m SimpleHTTPServer' 
+alias ht='cd ~/Dropbox/bubblexxx.github.io/ & chromium-browser "127.0.0.1:8000" & gvim ~/Dropbox/bubblexxx.github.io/src/main.js & firefox "www.youtube.com"'
+alias ga='cd ~/Dropbox/bubblexxx.github.io/ &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & cd Dropbox/bubblexxx.github.io/src/ & gnome-terminal -x nvim ~/Dropbox/bubblexxx.github.io/src/main.js'
+alias vip='vim -p *'
+alias pi=' cd ~/Dropbox/states/src/ && gnome-terminal -x vim -p ~/Dropbox/states/src/* & cd ~/Dropbox/"js liens" && grep "^URL=" *.url | cut -d= -f2 | xargs firefox &' 
+
+
+
+
+
+
 #ALIAS MAISON ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-	alias sound='amixer -D pulse sset Master 5%+'
+alias sound='amixer -D pulse sset Master 5%+'
 alias dec='pkill awesome'
 alias fact='libreoffice $HOME/Dropbox/fact/FACTURIERBERTRAND.xls'
 alias k='killall'
@@ -129,13 +143,6 @@ alias reboot='sudo reboot'
 alias fx='firefox &'
 
 #alias ht='cd ~/Dropbox/bubblexxx.github.io/ && browser-sync start --server --files "*.html, src/*.js, assets/*" & cd ~/Dropbox/bubblexxx.github.io/src/ && gvim main.js & firefox "www.youtube.com"'
-alias se='cd ~/Dropbox/bubblexxx.github.io/ && sudo python -m SimpleHTTPServer' 
-alias ht='cd ~/Dropbox/bubblexxx.github.io/ & chromium-browser "127.0.0.1:8000" & gvim ~/Dropbox/bubblexxx.github.io/src/main.js & firefox "www.youtube.com"'
-alias ga='cd ~/Dropbox/bubblexxx.github.io/ &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & cd Dropbox/bubblexxx.github.io/src/ & gnome-terminal -x nvim ~/Dropbox/bubblexxx.github.io/src/main.js'
-#alias pi=' cd ~/Dropbox/js && gnome-terminal -x vim ~/Dropbox/js/main.js & cd ~/Dropbox/"js liens" && grep "^URL=" *.url | cut -d= -f2 | xargs firefox & cd ~/Dropbox/js && xterm -hold -e "cd ~/Dropbox/js && sudo python -m SimpleHTTPServer 80"'
-
-alias vip='vim -p *'
-alias pi=' cd ~/Dropbox/states/src/ && gnome-terminal -x vim -p ~/Dropbox/states/src/* & cd ~/Dropbox/"js liens" && grep "^URL=" *.url | cut -d= -f2 | xargs firefox &' 
 
 #alias pir='sudo python -m SimpleHTTPServer 80'
 alias rs='shred -n 35 -z -u'

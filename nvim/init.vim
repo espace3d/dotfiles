@@ -1,7 +1,7 @@
 ""interface
 set encoding=utf8
-set number
 set mouse=a
+set noswapfile
 set autoindent
 set clipboard=unnamedplus
 " recherche incrementielle
@@ -12,16 +12,17 @@ set ignorecase
 " insensible à la casse dans les chemins
 set wildignorecase
 "" true color
-" relative number
-set relativenumber
 " vertical line to show position
 set cursorcolumn
-
+" relative number
+set number 
+set relativenumber
 " COLORS
 set background=dark
 colorscheme onedark
+syntax on
 set termguicolors
-
+set guifont=fontAwesome:h10
 " PERSONAL COMMAND
 " open snippets for phaser in a vertical split
 command Pref vsplit ~/.vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets
@@ -64,9 +65,14 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'majutsushi/tagbar'
 
 " COLORS THEMES
+
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'thenewvu/vim-colors-sketching'
+Plug 'tyrannicaltoucan/vim-deep-space'
 "Plug 'joshdick/onedark.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -86,7 +92,13 @@ let g:deoplete#enable_at_startup = 1
 
 set statusline+=%#warningmsg#
 set statusline+=%*
-
+"" disable autocomment when insert line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Automatically reload vimrc when it's saved
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
 "COMMANDES POUR SYNTASTIC
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -97,4 +109,6 @@ set statusline+=%*
 " yi( copier à l'intérieur de la parenthèse
 " ya( copier à toute la parenthèse
 " ya( coper
-"
+" Markdown
+"sudo npm install -g livedown
+"livedown start es.md --port 4242 --open"

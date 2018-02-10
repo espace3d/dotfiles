@@ -14,6 +14,8 @@ sudo apt-get install -y python-dev python-pip python3-dev python3-pip
 sudo -H pip3 install --upgrade neovim
 sudo -H pip2 install --upgrade neovim
 sudo npm install -g neovim
+sudo npm install -g browser-sync
+sudo npm install -g livedown
 
 cp ~/dotfiles/nvim/.tern-project ~/
 cp ~/dotfiles/nvim/init.vim ~/.config/nvim/
