@@ -14,6 +14,9 @@ set wildignorecase
 "" true color
 " vertical line to show position
 set cursorcolumn
+
+" to center always the view
+set so=999
 " relative number
 set number 
 set relativenumber
@@ -22,10 +25,12 @@ set background=dark
 colorscheme onedark
 syntax on
 set termguicolors
-set guifont=fontAwesome:h10
+set guifont=fontAwesome:h9
+
 " PERSONAL COMMAND
 " open snippets for phaser in a vertical split
 command Pref vsplit ~/.vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets
+command Config vsplit ~/.config/nvim/init_vim
 
 " CUSTOM KEYBINDING
 "NORMAL MODE
@@ -80,7 +85,7 @@ call plug#end()
 
 " SUPERTAB
 "scroll from top to bottom
-let g:SuperTabDefaultCompletionType = "<c-n>"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
 let g:python_host_prog  = '/usr/bin/python2.7'
 let g:python3_host_prog  = '/usr/bin/python3.5'

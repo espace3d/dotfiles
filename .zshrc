@@ -110,11 +110,11 @@ alias vic='nvim ~/.config/nvim/init.vim'
 	alias delco='extract result.zip && rm result.zip && rm android-armv7-release-unsigned.apk android-x86-debug.apk android-x86-release-unsigned.apk'
 alias se='cd ~/Dropbox/bubblexxx.github.io/ && sudo python -m SimpleHTTPServer' 
 alias ht='cd ~/Dropbox/bubblexxx.github.io/ & chromium-browser "127.0.0.1:8000" & gvim ~/Dropbox/bubblexxx.github.io/src/main.js & firefox "www.youtube.com"'
-alias ga='cd ~/Dropbox/bubblexxx.github.io/ &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & cd Dropbox/bubblexxx.github.io/src/ & gnome-terminal -x nvim ~/Dropbox/bubblexxx.github.io/src/main.js'
+alias ga='browser-sync start --server --files "*/*.*" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & chromium-browser "https://www.youtube.com" & code .' 
 alias vip='vim -p *'
 alias pi=' cd ~/Dropbox/states/src/ && gnome-terminal -x vim -p ~/Dropbox/states/src/* & cd ~/Dropbox/"js liens" && grep "^URL=" *.url | cut -d= -f2 | xargs firefox &' 
 
-
+cot() {cd ~/Dropbox/$* &&  browser-sync start --server --files "src/*.js" & firefox "https://developer.mozilla.org/fr/docs/Web/JavaScript" & firefox "https://www.youtube.com" & cd Dropbox/$*/src/ & gnome-terminal -x nvim -p ~/Dropbox/$*/src/*.js}
 
 
 
@@ -163,7 +163,7 @@ alias co='env WINEPREFIX="/home/syst/.wine" wine C:\\Program\ Files\ \(x86\)\\Co
 
 #ALIAS EXEMPLE DE SCRIPT
 alias fos='cat $HOME/Dropbox/SCRIPT/exempledecode'
-alias code='gedit $HOME/Dropbox/SCRIPT/exempledecode & firefox "http://abs.traduc.org/abs-5.0-fr/ch03.html" &'
+#alias code='gedit $HOME/Dropbox/SCRIPT/exempledecode & firefox "http://abs.traduc.org/abs-5.0-fr/ch03.html" &'
 
 #ALIAS RETEXT
 alias re='retext && libreoffice ~/Documents/*.html && rm ~/Documents/*.html'
