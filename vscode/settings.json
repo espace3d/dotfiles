@@ -1,0 +1,11 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "editor.formatOnType": true,
+    "editor.glyphMargin": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderIndentGuides": false,
+    "editor.lineNumbers": "relative",
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons"
+}

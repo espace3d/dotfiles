@@ -88,7 +88,7 @@ call plug#end()
 "let g:SuperTabDefaultCompletionType = "<c-n>"
 
 let g:python_host_prog  = '/usr/bin/python2.7'
-let g:python3_host_prog  = '/usr/bin/python3.5'
+let g:python3_host_prog  = '/usr/bin/python3.6'
 
 "peut etre à supprimer
 noautocmd
@@ -117,3 +117,4 @@ augroup END
 " Markdown
 "sudo npm install -g livedown
 "livedown start es.md --port 4242 --open"
+nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr>

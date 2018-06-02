@@ -95,8 +95,8 @@ alias zshdropbox='cp $HOME/.zshrc $HOME/Dropbox/dotfiles/'
 
 alias dropboxzsh='cp $HOME/Dropbox/dotfiles/.zshrc $HOME/'
 #COPY TO DROPBOX
-alias copytodropbox='cp $HOME/.zshrc $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/nvim/ $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/awesome/ $HOME/Dropbox/dotfiles/ && cp .vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets ~/Dropbox/dotfiles/vim-snippets/snippets/javascript/'
-alias dropboxtosyst='sudo cp -R $HOME/Dropbox/dotfiles/nvim $HOME/.config/ && cp -R $HOME/Dropbox/dotfiles/awesome $HOME/.config/ && cp ~/Dropbox/dotfiles/.zshrc $HOME/ && cp ~/Dropbox/dotfiles/nvim/snippets/javascript-phaser.snippets ~/.vim/plugged/vim-snippets/snippets/javascript/'
+alias copytodropbox='cp $HOME/.zshrc $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/nvim/ $HOME/Dropbox/dotfiles/ && cp -R $HOME/.config/awesome/ $HOME/Dropbox/dotfiles/ && cp .vim/plugged/vim-snippets/snippets/javascript/javascript-phaser.snippets ~/Dropbox/dotfiles/vim-snippets/snippets/javascript/ && cp ~/.config/Code/User/settings.json ~/Dropbox/dotfiles/vscode' 
+alias dropboxtosyst='sudo cp -R $HOME/Dropbox/dotfiles/nvim $HOME/.config/ && cp -R $HOME/Dropbox/dotfiles/awesome $HOME/.config/ && cp ~/Dropbox/dotfiles/.zshrc $HOME/ && cp ~/Dropbox/dotfiles/nvim/snippets/javascript-phaser.snippets ~/.vim/plugged/vim-snippets/snippets/javascript/ && cp ~/Dropbox/dotfiles/vscode/settings.json ~/.config/Code/User/'
 
 
 #CODAGE
